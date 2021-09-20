@@ -1,6 +1,6 @@
 # ReadMe is under construction...
 
-# link for live web page https://caleman34.github.io/Exploring_Hawaii/
+# link for live web page https://caleman34.github.io/Exploring_Hawaii_Demo_Day/
 
 ## Repository Info:
 
