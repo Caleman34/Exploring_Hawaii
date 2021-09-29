@@ -1,8 +1,3 @@
-var volcanoIcon = L.icon({
-  iconUrl: '/assets/img/beachUmbrella_icon.png',
-  iconSize: [30, 35]  
-});
-
 function createMap(beachMarkers) {
   // console.log(beachMarkers, volcanoMarkers);
 
@@ -43,7 +38,7 @@ function createMap(beachMarkers) {
 
   // Create an overlayMaps object to hold the beach conditions layer
   var overlayMaps = {
-    "Beaches": beachMarkers
+    "<img src='/assets/img/beachUmbrella_icon.png' height=20> Beaches": beachMarkers
     // "Volcanoes": volcanoMarkers
   };
 
@@ -59,6 +54,11 @@ function createMap(beachMarkers) {
     collapsed: false
   }).addTo(map);
 }
+
+var volcanoIcon = L.icon({
+  iconUrl: '/assets/img/beachUmbrella_icon.png',
+  iconSize: [20, 25]  
+});
 
 // Store our API endpoint inside queryUrl
 // var queryUrl = "https://hawaiibeachsafety.com/rest/conditions.json";
