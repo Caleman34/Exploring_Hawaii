@@ -1,8 +1,8 @@
-# Welcome to Exploring Hawaii: A Data & Visualization Journey
+# Exploring Hawaii: A Data & Visualization Journey
 
 ## Repository Info:
 
-Repository Size: 200 MB
+Repository Size: 315 MB
 
 Code can be run downloading the zip file and loading into Visual Studio Code or click on the link for Github for partial viewing due to not all JS animations and Leaflet maps will work.
 
@@ -12,14 +12,14 @@ The purpose of this project was to analyze data and tell a story using our acqui
 
 Note: When viewing on Github, some Javascript animations and leaflet maps will not be visable due to not being supported by Github.
 
-### Landing Page Features
+## Landing Page Features
 
 ![landing](assets/img/landing.gif)
 
-### Exploring Hawaiian Islands
+## Exploring Hawaiian Islands
 
 ![exploring](assets/img/exploring.gif)
 
-### Exploring Hawaii Leaflet Maps
+## Exploring Hawaii Leaflet Maps
 
 ![maps](assets/img/maps.gif)
