@@ -14,12 +14,12 @@ Note: When viewing on Github, some Javascript animations and leaflet maps will n
 
 ### Landing Page Features
 
-![landing](assets/img/code/landing.gif)
+![landing](assets/img/landing.gif)
 
 ### Exploring Hawaiian Islands
 
-![exploring](assets/img/code/exploring.gif)
+![exploring](assets/img/exploring.gif)
 
 ### Exploring Hawaii Leaflet Maps
 
-![maps](assets/img/code/maps.gif)
+![maps](assets/img/maps.gif)
