@@ -43,7 +43,7 @@
   <style>
     #map {
       width: auto;
-      height: 1000px;
+      height: 750px;
       border: 4px solid rgb(241, 9, 106);
       overflow: hidden;
     }
@@ -73,6 +73,10 @@
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-top: 10px solid black;
+    }
+
+    .button-overlay {
+      position: relative;
     }
   </style>
 
@@ -121,9 +125,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <h6 class="dropdown-header">Trip Research</h6>
-              <a href="../discover/hotels.html" class="dropdown-item">Planning</a>
+              <a href="../discover/hotels.html" class="dropdown-item">Lodging</a>
               <a href="../discover/climate.html" class="dropdown-item">Climate</a>
-              <a href="../discover/conditions.html" class="dropdown-item">Beaches</a>
+              <a href="../discover/conditions.html" class="dropdown-item">Planning</a>
               <div class="dropdown-divider"></div>
               <a href="../discover/ufo.html" class="dropdown-item">UFO Sightings</a>
             </div>
@@ -177,6 +181,9 @@
         </div>
       </div>
       <div class='custom-popup' id="map"></div>
+      <div class = "button-overlay">
+        <button class="btn btn-rose">Reset Zoom</button>
+      </div>
       <br>
       <hr>
       <div class="row">
@@ -194,9 +201,9 @@
           <div class="card text-center" style="width: 12rem;">
             <!-- <img class="card-img-top" src="assets/img/honolulu.webp" alt="Card image cap"> -->
             <div class="card-body">
-              <a href="../discover/hotels.html" class="card-title btn btn-rose">Planning</a>
+              <a href="../discover/hotels.html" class="card-title btn btn-rose">Lodging</a>
               <hr>
-              <p class="card-text">Hotels and Beach Information</p>
+              <p class="card-text">Lodging Information around the islands</p>
             </div>
           </div>
         </div>

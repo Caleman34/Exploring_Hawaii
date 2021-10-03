@@ -184,7 +184,21 @@ var overlayMaps = {
 };
 L.control.scale().addTo(map);
 
+(function() {
+	var control = new L.Control({position:'topleft'});
+	control.onAdd = function(map) {
+    var resetZoomButton = document.querySelector('.button-overlay');
+    resetZoomButton.addEventListener('click', function() {
+      map.setView([20.438043, -157.462667], 8);
+    });
+			return resetZoomButton;
+		};
+	return control;
+}())
+.addTo(map);
+
 L.control.layers(baseMaps, overlayMaps, {
-  collapsed: false,
+  collapsed: true,
   position: "bottomleft"
 }).addTo(map);
+

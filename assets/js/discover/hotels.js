@@ -125,5 +125,27 @@ function createFeatures(hotelData) {
     }
   });
 
+  fetch(queryData)
+  .then(function (response) { return response.json() })
+  .then(function (data) {
+      
+      var hotel = L.geoJson(data, {
+          filter: function(feat) { return feat.properties.filters.type === 'Hotel'},
+          /* etc */
+      });
+      var hazards = L.geoJson(data, {
+          filter: function(feat) { return feat.properties.filters.name === 'Hazard'},
+          /* etc */
+      });
+      var airspace = L.geoJson(data, {
+          filter: function(feat) { return feat.properties.filters.name === 'Air Space'},
+          /* etc */
+      });
+});
+
+layersControl.addOverlay(hotel, "Hotel");      
+layersControl.addOverlay(hazards, "Hazards");    
+layersControl.addOverlay(airspace, "Air Space");
+
   createMap(hotelMarkers);
 }
