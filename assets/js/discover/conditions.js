@@ -67,7 +67,9 @@ d3.json(beachJson, function (beachData) {
       "<hr>" + "<h6>Temperature: " + beachData[i].temp + " F" + "</h6>" +
       "<h6>Weather: " + beachData[i].weather + "</h6>" +
       "<h6>Surf: " + beachData[i].surf + "</h6>" +
-      "<a href=" + beachData[i].link + "><h6>Click here more info</h6></a>");
+      "<a href=" + beachData[i].link + "><h6>Click here more info</h6></a>").on('click', function(e) {
+        map.flyTo(e.latlng, 11);
+      });
     beachMarker.addLayer(beachMarkers);
   }
 });
@@ -83,9 +85,8 @@ d3.json(volcanoJson, function (volcanoData) {
       "<h6>Type: " + volcanoData[i].type + "</h6>" +
       "<h6>Status: " + volcanoData[i].status + "</h6>" +
       "<hr>" + "<h6>Last Known Eruption: " + volcanoData[i].last_known_eruption_type + " F" + "</h6>" +
-      "<h6>Elevation: " + volcanoData[i].elevation_m + " meters</h6>").on({click: function(e) {
-        map.panTo([e.lat, e.lon]).zoomIn(7);
-      }
+      "<h6>Elevation: " + volcanoData[i].elevation_m + " meters</h6>").on('click', function(e) {
+        map.flyTo(e.latlng, 11);
       });
     volcanoMarker.addLayer(volcanoMarkers);
   }
@@ -93,14 +94,18 @@ d3.json(volcanoJson, function (volcanoData) {
 
 
 // // coral marker layer group
-var coralMarker = L.layerGroup();
+var coralMarker = L.layerGroup().on({click: function(event) {
+  map.panTo(event.target.getBounds());
+}});
 
 d3.json(coraljson, function (coralData) {
   for (var i = 0; i < coralData.length; i++) {
     var coralMarkers = L.marker([coralData[i].latitude, coralData[i].longitude], {icon: coralIcon }).bindPopup("<h4>Name: " + coralData[i].VernacularNameCategory + "</h4>" + "<hr>" +
     "<h6>Locality: " + coralData[i].Locality + "</h6>" +
     "<h6>Scientific Name: " + coralData[i].ScientificName + "</h6>" +
-    "<h6>Depth: " + coralData[i].DepthInMeters + " meters</h6>")
+    "<h6>Depth: " + coralData[i].DepthInMeters + " meters</h6>").on('click', function(e) {
+      map.flyTo(e.latlng, 11);
+    });
     coralMarker.addLayer(coralMarkers);
   }
 });
@@ -177,7 +182,9 @@ var overlayMaps = {
   "<img src='/assets/img/volcano_icon.png' height=20> Volcanoes": volcanoMarker,
   "<img src='/assets/img/coral_icon.png' height=20> Coral Sites": coralMarker
 };
+L.control.scale().addTo(map);
 
 L.control.layers(baseMaps, overlayMaps, {
-  collapsed: true
+  collapsed: false,
+  position: "bottomleft"
 }).addTo(map);
