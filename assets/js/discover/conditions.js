@@ -1,13 +1,13 @@
 // hard code for backup due to CORS error occuring often
-var beachJson = "/assets/js/discover/conditions.json";
-var volcanoJson = "/assets/js/discover/volcanoData.json";
-var coraljson = "/assets/js/discover/corals.json";
-var parkjson = "/assets/js/discover/Parks.geojson";
-
 var map = L.map("map", {
   center: [20.438043, -157.462667],
   zoom: 8
 });
+
+var beachJson = "/assets/js/discover/conditions.json";
+var volcanoJson = "/assets/js/discover/volcanoData.json";
+var coraljson = "/assets/js/discover/corals.json";
+var parkjson = "/assets/js/discover/Parks.geojson";
 
 // Create the tile layer that will be the background of our map
 var outdoorMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
