@@ -4,11 +4,6 @@ var map = L.map("map", {
   zoom: 8
 });
 
-var beachJson = "/assets/js/discover/conditions.json";
-var volcanoJson = "/assets/js/discover/volcanoData.json";
-var coraljson = "/assets/js/discover/corals.json";
-var parkjson = "/assets/js/discover/Parks.geojson";
-
 // Create the tile layer that will be the background of our map
 var outdoorMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -55,6 +50,11 @@ var coralIcon = L.icon({
   iconUrl: '/assets/img/coral_icon.png',
   iconSize: [20, 25]
 });
+
+var beachJson = "/assets/js/discover/conditions.json";
+var volcanoJson = "/assets/js/discover/volcanoData.json";
+var coraljson = "/assets/js/discover/corals.json";
+var parkjson = "/assets/js/discover/Parks.geojson";
 
 // Beach Markers layer group
 var beachMarker = L.layerGroup().addTo(map);
