@@ -34,23 +34,6 @@ var satelliteMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/
   accessToken: "pk.eyJ1IjoiY2FsZW1hbjM0IiwiYSI6ImNrcjQ0ZzNoZjA0eTIyb252cHZmcm1ldmMifQ.Fk39MiEHDwYwG-smYjNsSg"
 });
 
-// Umbrella Icon
-var umbrellaIcon = L.icon({
-  iconUrl: '/assets/img/beachUmbrella_icon.png',
-  iconSize: [20, 25]
-});
-
-// volcano Icon
-var volcanoIcon = L.icon({
-  iconUrl: '/assets/img/volcano_icon.png',
-  iconSize: [20, 25]
-});
-
-var coralIcon = L.icon({
-  iconUrl: '/assets/img/coral_icon.png',
-  iconSize: [20, 25]
-});
-
 var beachJson = "/assets/js/discover/conditions.json";
 var volcanoJson = "/assets/js/discover/volcanoData.json";
 var coraljson = "/assets/js/discover/corals.json";
@@ -196,6 +179,23 @@ L.control.scale().addTo(map);
 	return control;
 }())
 .addTo(map);
+
+// Umbrella Icon
+var umbrellaIcon = L.icon({
+  iconUrl: '/assets/img/beachUmbrella_icon.png',
+  iconSize: [20, 25]
+});
+
+// volcano Icon
+var volcanoIcon = L.icon({
+  iconUrl: '/assets/img/volcano_icon.png',
+  iconSize: [20, 25]
+});
+
+var coralIcon = L.icon({
+  iconUrl: '/assets/img/coral_icon.png',
+  iconSize: [20, 25]
+});
 
 L.control.layers(baseMaps, overlayMaps, {
   collapsed: true,
