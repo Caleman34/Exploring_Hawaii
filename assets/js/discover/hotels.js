@@ -205,6 +205,8 @@ var overlayMaps = {
   "Other": otherMarkers
 };
 
+L.control.scale().addTo(map);
+
 // legend--------------------
 var legend = L.control({
   position: 'topright'
