@@ -1,4 +1,3 @@
-// hard code for backup due to CORS error occuring often
 var map = L.map("map", {
   center: [20.438043, -157.462667],
   zoom: 8
@@ -32,6 +31,23 @@ var satelliteMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/
   zoomOffset: -1,
   id: "mapbox/satellite-streets-v11",
   accessToken: "pk.eyJ1IjoiY2FsZW1hbjM0IiwiYSI6ImNrcjQ0ZzNoZjA0eTIyb252cHZmcm1ldmMifQ.Fk39MiEHDwYwG-smYjNsSg"
+});
+
+// Umbrella Icon
+var umbrellaIcon = L.icon({
+  iconUrl: '/assets/img/beachUmbrella_icon.png',
+  iconSize: [20, 25]
+});
+
+// volcano Icon
+var volcanoIcon = L.icon({
+  iconUrl: '/assets/img/volcano_icon.png',
+  iconSize: [20, 25]
+});
+
+var coralIcon = L.icon({
+  iconUrl: '/assets/img/coral_icon.png',
+  iconSize: [20, 25]
 });
 
 var beachJson = "/assets/js/discover/conditions.json";
@@ -179,23 +195,6 @@ L.control.scale().addTo(map);
 	return control;
 }())
 .addTo(map);
-
-// Umbrella Icon
-var umbrellaIcon = L.icon({
-  iconUrl: '/assets/img/beachUmbrella_icon.png',
-  iconSize: [20, 25]
-});
-
-// volcano Icon
-var volcanoIcon = L.icon({
-  iconUrl: '/assets/img/volcano_icon.png',
-  iconSize: [20, 25]
-});
-
-var coralIcon = L.icon({
-  iconUrl: '/assets/img/coral_icon.png',
-  iconSize: [20, 25]
-});
 
 L.control.layers(baseMaps, overlayMaps, {
   collapsed: true,
