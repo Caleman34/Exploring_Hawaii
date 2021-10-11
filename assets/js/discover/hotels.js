@@ -207,7 +207,7 @@ var overlayMaps = {
 
 // legend--------------------
 var legend = L.control({
-  position: 'bottomleft'
+  position: 'topright'
 });
 
 legend.onAdd = function (map) {
@@ -232,7 +232,8 @@ legend.onAdd = function (map) {
 
 // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps, {
-  collapsed: true
+  collapsed: true,
+  position: "bottomleft"
 }).addTo(map);
 
 legend.addTo(map);
