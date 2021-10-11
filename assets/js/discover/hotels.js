@@ -43,18 +43,7 @@ function getColor(type) {
             'white';
 }
 
-function forEachFeature(feature, layer) {
-  layer.bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
-    "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
-    "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
-    "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
-    "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
-      map.flyTo(e.latlng, 11);
-    })
-};
-
-var hotels = L.geoJSON(null, {
-  onEachFeature: forEachFeature,
+var hotelMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
       radius: 6,
@@ -63,7 +52,126 @@ var hotels = L.geoJSON(null, {
       color: getColor(feature.properties.type),
       fillColor: getColor(feature.properties.type),
       fillOpacity: 0.8
-    });
+    }).bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
+      "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
+      "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
+      "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
+      "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
+        map.flyTo(e.latlng, 11);
+      });
+  },
+  filter: function (feature, layer) {
+    return (feature.properties.type == "HOTEL");
+  }
+}).addTo(map);
+
+var individualUnitMarkers = L.geoJSON(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 6,
+      opacity: .5,
+      //color: "#000",
+      color: getColor(feature.properties.type),
+      fillColor: getColor(feature.properties.type),
+      fillOpacity: 0.8
+    }).bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
+      "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
+      "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
+      "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
+      "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
+        map.flyTo(e.latlng, 11);
+      });
+  },
+  filter: function (feature, layer) {
+    return (feature.properties.type == "INDIVIDUAL VACATION UNIT");
+  }
+});
+
+var condoMarkers = L.geoJSON(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 6,
+      opacity: .5,
+      //color: "#000",
+      color: getColor(feature.properties.type),
+      fillColor: getColor(feature.properties.type),
+      fillOpacity: 0.8
+    }).bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
+      "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
+      "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
+      "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
+      "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
+        map.flyTo(e.latlng, 11);
+      });
+  },
+  filter: function (feature, layer) {
+    return (feature.properties.type == "CONDOMINIUM HOTEL");
+  }
+});
+
+var bbMarkers = L.geoJSON(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 6,
+      opacity: .5,
+      //color: "#000",
+      color: getColor(feature.properties.type),
+      fillColor: getColor(feature.properties.type),
+      fillOpacity: 0.8
+    }).bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
+      "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
+      "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
+      "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
+      "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
+        map.flyTo(e.latlng, 11);
+      });
+  },
+  filter: function (feature, layer) {
+    return (feature.properties.type == "BED & BREAKFAST");
+  }
+});
+
+var timeshareMarkers = L.geoJSON(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 6,
+      opacity: .5,
+      //color: "#000",
+      color: getColor(feature.properties.type),
+      fillColor: getColor(feature.properties.type),
+      fillOpacity: 0.8
+    }).bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
+      "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
+      "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
+      "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
+      "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
+        map.flyTo(e.latlng, 11);
+      });
+  },
+  filter: function (feature, layer) {
+    return (feature.properties.type == "TIMESHARE");
+  }
+});
+
+var otherMarkers = L.geoJSON(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 6,
+      opacity: .5,
+      //color: "#000",
+      color: getColor(feature.properties.type),
+      fillColor: getColor(feature.properties.type),
+      fillOpacity: 0.8
+    }).bindPopup("<h4>" + feature.properties.name + "</h4>" + "<hr>" +
+      "<h6>type of Lodging: " + feature.properties.type + "</h6>" +
+      "<h6 text-center>Islande: " + feature.properties.island + "</h6>" +
+      "<h6>Year Opened: " + feature.properties.year_open + "</h6>" +
+      "<h6>Address: " + feature.properties.address + "</h6>").on('click', function (e) {
+        map.flyTo(e.latlng, 11);
+      });
+  },
+  filter: function (feature, layer) {
+    return (feature.properties.type == "OTHER");
   }
 });
 
@@ -71,10 +179,13 @@ var hotels = L.geoJSON(null, {
 var hoteljson = "/assets/js/discover/hotelData.geojson";
 
 d3.json(hoteljson, function (hotelData) {
-  hotels.addData(hotelData);
+  hotelMarkers.addData(hotelData);
+  individualUnitMarkers.addData(hotelData);
+  condoMarkers.addData(hotelData);
+  bbMarkers.addData(hotelData);
+  timeshareMarkers.addData(hotelData);
+  otherMarkers.addData(hotelData);
 });
-
-hotels.addTo(map);
 
 
 // Create a baseMaps object to hold the lightmap layer
@@ -86,7 +197,12 @@ var baseMaps = {
 
 // Create an overlayMaps object to hold the beach conditions layer
 var overlayMaps = {
-  "Hotels": hotels
+  "Hotels": hotelMarkers,
+  "Individual Vacation Unit": individualUnitMarkers,
+  "Condominium Hotel": condoMarkers,
+  "Bed & Breakfast": bbMarkers,
+  "Timeshare": timeshareMarkers,
+  "Other": otherMarkers
 };
 
 // legend--------------------
@@ -121,15 +237,18 @@ L.control.layers(baseMaps, overlayMaps, {
 
 legend.addTo(map);
 
-(function() {
-	var control = new L.Control({position:'topleft'});
-	control.onAdd = function(map) {
+
+// reset zoom button------------------------------
+(function () {
+  var control = new L.Control({ position: 'topleft' });
+  control.onAdd = function (map) {
     var resetZoomButton = document.querySelector('.button-overlay');
-    resetZoomButton.addEventListener('click', function() {
+    resetZoomButton.addEventListener('click', function () {
       map.setView([20.438043, -157.462667], 8);
     });
-			return resetZoomButton;
-		};
-	return control;
+    return resetZoomButton;
+  };
+  return control;
 }())
-.addTo(map);
+  .addTo(map);
+// end of reset zoom button----------------------
