@@ -46,7 +46,7 @@ function getColor(type) {
 var hotelMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
-      radius: 6,
+      radius: 5,
       opacity: .5,
       //color: "#000",
       color: getColor(feature.properties.type),
@@ -68,7 +68,7 @@ var hotelMarkers = L.geoJSON(null, {
 var individualUnitMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
-      radius: 6,
+      radius: 5,
       opacity: .5,
       //color: "#000",
       color: getColor(feature.properties.type),
@@ -90,7 +90,7 @@ var individualUnitMarkers = L.geoJSON(null, {
 var condoMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
-      radius: 6,
+      radius: 5,
       opacity: .5,
       //color: "#000",
       color: getColor(feature.properties.type),
@@ -112,7 +112,7 @@ var condoMarkers = L.geoJSON(null, {
 var bbMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
-      radius: 6,
+      radius: 5,
       opacity: .5,
       //color: "#000",
       color: getColor(feature.properties.type),
@@ -134,7 +134,7 @@ var bbMarkers = L.geoJSON(null, {
 var timeshareMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
-      radius: 6,
+      radius: 5,
       opacity: .5,
       //color: "#000",
       color: getColor(feature.properties.type),
@@ -156,7 +156,7 @@ var timeshareMarkers = L.geoJSON(null, {
 var otherMarkers = L.geoJSON(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
-      radius: 6,
+      radius: 5,
       opacity: .5,
       //color: "#000",
       color: getColor(feature.properties.type),
@@ -232,7 +232,7 @@ legend.onAdd = function (map) {
 
 // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps, {
-  collapsed: false
+  collapsed: true
 }).addTo(map);
 
 legend.addTo(map);
