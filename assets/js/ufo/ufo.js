@@ -4,6 +4,7 @@ var tableData = data;
 // get table references
 var tbody = d3.select(".ufotable");
 
+
 function buildTable(data) {
   // First, clear out any existing data
   tbody.html("");
@@ -65,7 +66,9 @@ function filterTable() {
 }
 
 // Attach an event to listen for changes to each filter
-d3.selectAll(".filter").on("change", updateFilters);
+d3.selectAll("#select").on("change", updateFilters);
 
 // Build the table when the page loads
 buildTable(tableData);
+
+
