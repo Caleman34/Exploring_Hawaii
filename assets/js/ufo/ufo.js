@@ -1,9 +1,9 @@
 // from data.js
 var tableData = data;
 
+ 
 // get table references
 var tbody = d3.select(".ufotable");
-
 
 function buildTable(data) {
   // First, clear out any existing data
